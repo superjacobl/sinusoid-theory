@@ -334,8 +334,8 @@ var getTertiaryEquation = () => {
     result += ",\\;dt=" + ((getdt() > 0.01) ? getdt().toFixed(5) : getdt().toExponential(1));
     return result;
 }
-var getPublicationMultiplier = (tau) => tau.pow(1/taupau).pow(0.10) * 5;
-var getPublicationMultiplierFormula = (symbol) => "5 \\times " + symbol;
+var getPublicationMultiplier = (tau) => tau.pow(1.1) * 10;
+var getPublicationMultiplierFormula = (symbol) => "10 \\times " + symbol + "^{1.1};
 var getTau = () => currency.value.abs().pow(taupau);//1 e (log10(currency) / 5)
 var getCurrencyFromTau = (tau) => [tau.max(BigNumber.ONE).pow(10), currency.symbol];
 //var getCurrencyFromTau = (tau) => [tau.max(BigNumber.ONE).pow(1/taupau), currency.symbol];
