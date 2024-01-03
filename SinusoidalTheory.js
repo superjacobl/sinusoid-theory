@@ -335,7 +335,7 @@ var getTertiaryEquation = () => {
     return result;
 }
 var getPublicationMultiplier = (tau) => tau.pow(1.1) * 10;
-var getPublicationMultiplierFormula = (symbol) => "10 \\times " + symbol + "^{1.1};
+var getPublicationMultiplierFormula = (symbol) => "10 \\times " + symbol + "^{1.1}";
 var getTau = () => currency.value.abs().pow(taupau);//1 e (log10(currency) / 5)
 var getCurrencyFromTau = (tau) => [tau.max(BigNumber.ONE).pow(10), currency.symbol];
 //var getCurrencyFromTau = (tau) => [tau.max(BigNumber.ONE).pow(1/taupau), currency.symbol];
