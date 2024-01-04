@@ -25,7 +25,7 @@ var costs = [
     new ExponentialCost(1e25, Math.log2(10)),
     new ExponentialCost(1e35, Math.log2(1e5)),
     new ExponentialCost(1, Math.log2(2)), 
-    new FirstFreeCost(new ExponentialCost(50, Math.log2(1.4))), 
+    new FirstFreeCost(new ExponentialCost(50, Math.log2(1.385))), 
     new ExponentialCost(1000, Math.log2(10))
 ];
 var taupau = 0.1;
@@ -334,8 +334,8 @@ var getTertiaryEquation = () => {
     result += ",\\;dt=" + ((getdt() > 0.01) ? getdt().toFixed(5) : getdt().toExponential(1));
     return result;
 }
-var getPublicationMultiplier = (tau) => tau.pow(1.1) * 10;
-var getPublicationMultiplierFormula = (symbol) => "10 \\times " + symbol + "^{1.1}";
+var getPublicationMultiplier = (tau) => tau.pow(1.12) * 10;
+var getPublicationMultiplierFormula = (symbol) => "10 \\times " + symbol + "^{1.12}";
 var getTau = () => currency.value.abs().pow(taupau);//1 e (log10(currency) / 5)
 var getCurrencyFromTau = (tau) => [tau.max(BigNumber.ONE).pow(10), currency.symbol];
 //var getCurrencyFromTau = (tau) => [tau.max(BigNumber.ONE).pow(1/taupau), currency.symbol];
