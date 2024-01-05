@@ -255,7 +255,12 @@ var tick = (elapsedTime, multiplier) => {
     let dt = getdt();
     //TODO need to account for t resets, there needs to be a penalty for this with large ticks
     let vt0 = BigNumber.from(t);
-    t += dt * effectiveElapsedTime;
+    if (t < 17500) {
+        t += dt * effectiveElapsedTime * 5;
+    }
+    else {
+       t += dt * effectiveElapsedTime;
+    }
     let vt1 = BigNumber.from(t);
     let tExp = Math.pow(Math.sqrt(2), pMilestone.level) * getP(p.level);
 
