@@ -260,6 +260,9 @@ var tick = (elapsedTime, multiplier) => {
         if (muit > 5) {
             muit = 5;
         }
+        if (muit < 1) {
+            muit = 1;
+        }
         t += dt * effectiveElapsedTime * muit;
     }
     else {
