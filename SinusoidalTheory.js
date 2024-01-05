@@ -256,7 +256,11 @@ var tick = (elapsedTime, multiplier) => {
     //TODO need to account for t resets, there needs to be a penalty for this with large ticks
     let vt0 = BigNumber.from(t);
     if (t < 17500) {
-        t += dt * effectiveElapsedTime * 5;
+        let muit = 17500 / t;
+        if (muit > 5) {
+            muit = 5;
+        }
+        t += dt * effectiveElapsedTime * muit;
     }
     else {
        t += dt * effectiveElapsedTime;
