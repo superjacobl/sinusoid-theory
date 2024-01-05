@@ -25,8 +25,8 @@ var costs = [
     new ExponentialCost(1e17, Math.log2(10)),
     new ExponentialCost(1e31, Math.log2(1e5)),
     new ExponentialCost(1, Math.log2(2)), 
-    new FirstFreeCost(new ExponentialCost(50, Math.log2(1.35))), 
-    new ExponentialCost(10, Math.log2(10))
+    new FirstFreeCost(new ExponentialCost(1, Math.log2(1.35))), 
+    new ExponentialCost(1, Math.log2(10))
 ];
 var taupau = 0.1;
 var lastTickWasAFK = false;
